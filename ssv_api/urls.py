@@ -1,8 +1,11 @@
 from django.urls import path
  
-from . import views,testdb
+from . import views,testdb,TopViews
+
  
 urlpatterns = [
-    path('a/', views.hello),
-    path('b/', testdb.testdb),
+    path('User/', testdb.Userdb),
+    path('reg/', views.Register),
+    path('login/', views.Login),
+    path('top/user/', TopViews.Userdb),
 ]
