@@ -80,8 +80,12 @@ class Store(models.Model):
     store_address = models.CharField(max_length=1024)
     store_address_code = models.CharField(max_length=1024)
     store_phone_num = models.CharField(max_length=1024)
+    store_status = models.CharField(max_length=1024)
     create_time = models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)
+    
+
+
 # 设备表
 class Device(models.Model):
     id = models.AutoField(primary_key=True)
@@ -121,6 +125,7 @@ class Status(models.Model):
 class Alarm(models.Model):
     id = models.AutoField(primary_key=True)
     alarm_id = models.CharField(max_length=1024)
+    user_alarm_id = models.CharField(max_length=1024)
     store_alarm_id = models.CharField(max_length=1024)
     device_alarm_id = models.CharField(max_length=1024)
     sensor_alarm_id = models.CharField(max_length=1024)
